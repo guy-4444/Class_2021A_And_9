@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "520757773559",
+    "project_id": "sushiapp-62ca4",
+    "storage_bucket": "sushiapp-62ca4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520757773559:android:60f2304e682c0ee3dbfff2",
+        "android_client_info": {
+          "package_name": "com.classy.class_2021a_and_9"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520757773559-gcav6f9snjuod8gpdmhm2d2ih0524h7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC0KX72VtNlyq7sQXEO5Y3l_ovf8xdU5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520757773559-gcav6f9snjuod8gpdmhm2d2ih0524h7h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Class_2021A_And_9</string>
+
+    <string name="phone_number">מספר טלפון</string>
+    <string name="ok_">אישור</string>
+    <string name="continue_">המשך</string>
+    <string name="enter_code">הזן סיסמה</string>
+    <string name="login">התחבר</string>
+
+</resources>
