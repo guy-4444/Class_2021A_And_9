@@ -6,13 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -26,7 +24,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class MainActivity extends AppCompatActivity {
+public class Activity_Login extends AppCompatActivity {
 
     private enum LOGIN_STATE {
         ENTERING_NUMBER,
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         findViews();
         initViews();
@@ -50,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        main_EDT_phone.setError("Wrong number.");
     }
 
 
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         public void onVerificationFailed(FirebaseException e) {
             Log.d("pttt", "onVerificationFailed: " + e.getMessage());
             e.printStackTrace();
-            Toast.makeText(MainActivity.this, "VerificationFailed " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(Activity_Login.this, "VerificationFailed " + e.getMessage(), Toast.LENGTH_SHORT).show();
             login_state = LOGIN_STATE.ENTERING_NUMBER;
             updateUI();
         }
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in failed, display a message and update the UI
                             Log.w("pttt", "signInWithCredential:failure", task.getException());
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                Toast.makeText(MainActivity.this, "Wrong Code", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Activity_Login.this, "Wrong Code", Toast.LENGTH_SHORT).show();
                                 updateUI();
                             }
                         }
