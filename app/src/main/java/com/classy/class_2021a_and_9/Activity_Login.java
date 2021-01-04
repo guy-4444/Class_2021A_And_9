@@ -3,6 +3,7 @@ package com.classy.class_2021a_and_9;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -108,6 +109,7 @@ public class Activity_Login extends AppCompatActivity {
 
         @Override
         public void onCodeAutoRetrievalTimeOut(@NonNull String s) {
+            Log.d("pttt", "onCodeAutoRetrievalTimeOut " + s);
             super.onCodeAutoRetrievalTimeOut(s);
         }
 
@@ -132,7 +134,10 @@ public class Activity_Login extends AppCompatActivity {
                             Log.d("pttt", "signInWithCredential:success");
 
                             FirebaseUser user = task.getResult().getUser();
-                            // ...
+
+                            userSignedIn();
+
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             Log.w("pttt", "signInWithCredential:failure", task.getException());
@@ -143,6 +148,12 @@ public class Activity_Login extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void userSignedIn() {
+        Intent myIntent = new Intent(this, Activity_Menu.class);
+        startActivity(myIntent);
+        finish();
     }
 
     private void updateUI() {
